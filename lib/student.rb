@@ -7,7 +7,6 @@ class Student
   end
 
   def self.create_table
-    DB[:conn].execute(
     sql =  <<-SQL
       CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY,
@@ -15,7 +14,7 @@ class Student
         album TEXT
         )
         SQL
-    DB[:conn].execute(sql) )
+    DB[:conn].execute(sql)
   end
 
 end
